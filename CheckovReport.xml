@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<testsuites disabled="0" errors="0" failures="2" tests="2" time="0.0">
+	<testsuite disabled="0" errors="0" failures="2" name="sca_package scan" skipped="0" tests="2" time="0">
+		<properties>
+			<property name="directory" value="['D:\\My Projects\\node-js-nx-test2']"/>
+			<property name="add_check" value="False"/>
+			<property name="list" value="False"/>
+			<property name="output" value="['cli', 'junitxml']"/>
+			<property name="output_file_path" value="console,CheckovReport.xml"/>
+			<property name="output_bc_ids" value="False"/>
+			<property name="include_all_checkov_policies" value="False"/>
+			<property name="quiet" value="False"/>
+			<property name="compact" value="False"/>
+			<property name="framework" value="['all']"/>
+			<property name="skip_framework" value="[]"/>
+			<property name="run_all_external_checks" value="False"/>
+			<property name="soft_fail" value="False"/>
+			<property name="prisma_api_url" value="https://api.sg.prismacloud.io"/>
+			<property name="skip_results_upload" value="False"/>
+			<property name="repo_id" value="testbillynx2/node-nx2"/>
+			<property name="branch" value="test"/>
+			<property name="skip_download" value="False"/>
+			<property name="use_enforcement_rules" value="True"/>
+			<property name="external_modules_download_path" value=".external_modules"/>
+			<property name="evaluate_variables" value="True"/>
+			<property name="no_cert_verify" value="False"/>
+			<property name="create_baseline" value="False"/>
+			<property name="output_baseline_as_skipped" value="False"/>
+			<property name="secrets_scan_file_type" value="[]"/>
+			<property name="enable_secret_scan_all_files" value="True"/>
+			<property name="block_list_secret_scan" value="[]"/>
+			<property name="summary_position" value="top"/>
+			<property name="skip_resources_without_violations" value="False"/>
+			<property name="deep_analysis" value="False"/>
+			<property name="no_fail_on_crash" value="False"/>
+			<property name="mask" value="defaultdict(&lt;class 'set'&gt;, {})"/>
+			<property name="scan_secrets_history" value="False"/>
+			<property name="secrets_history_timeout" value="12h"/>
+			<property name="custom_tool_name" value="Checkov"/>
+		</properties>
+		<testcase name="[HIGH][CVE-2025-27152] axios: 1.1.3" classname="/.nx\cache\cloud\2508.28.6\package.json.axios" file="/.nx\cache\cloud\2508.28.6\package.json">
+			<failure type="failure" message="SCA package scan">
+Description: axios is a promise based HTTP client for the browser and node.js. The issue occurs when passing absolute URLs rather than protocol-relative URLs to axios. Even if u2060baseURL is set, axios sends the request to the specified absolute URL, potentially causing SSRF and credential leakage. This issue impacts both server-side and client-side usage of axios. This issue is fixed in 1.8.2.
+Link: https://nvd.nist.gov/vuln/detail/CVE-2025-27152
+Published Date: 2025-03-07T16:15:38Z
+Base Score: 7.7
+Vector: 
+Risk Factors: {'Severity': 'High', 'HasFix': True, 'DoS': False, 'RecentVulnerability': True}
+Fix Details:
+  Status: fixed in 1.8.2, 0.30.0
+  Fixed Version: 1.8.2
+
+Resource: .nx\cache\cloud\2508.28.6\package.json.axios
+File: /.nx\cache\cloud\2508.28.6\package.json: 9-9
+
+		9 |     "axios": "1.1.3",</failure>
+		</testcase>
+		<testcase name="[MEDIUM][CVE-2024-28863] tar: 6.1.11" classname="/.nx\cache\cloud\2508.28.6\package.json.tar" file="/.nx\cache\cloud\2508.28.6\package.json">
+			<failure type="failure" message="SCA package scan">
+Description: node-tar is a Tar for Node.js. node-tar prior to version 6.2.1 has no limit on the number of sub-folders created in the folder creation process. An attacker who generates a large number of sub-folders can consume memory on the system running node-tar and even crash the Node.js client within few seconds of running it using a path with too many sub-folders inside. Version 6.2.1 fixes this issue by preventing extraction in excessively deep sub-folders.
+Link: https://nvd.nist.gov/vuln/detail/CVE-2024-28863
+Published Date: 2024-03-21T23:15:10Z
+Base Score: 6.5
+Vector: 
+Risk Factors: {'Severity': 'Medium', 'HasFix': True, 'DoS': False}
+Fix Details:
+  Status: fixed in 6.2.1
+  Fixed Version: 6.2.1
+
+Resource: .nx\cache\cloud\2508.28.6\package.json.tar
+File: /.nx\cache\cloud\2508.28.6\package.json: 13-13
+
+		13 |     "tar": "6.1.11",</failure>
+		</testcase>
+	</testsuite>
+</testsuites>
